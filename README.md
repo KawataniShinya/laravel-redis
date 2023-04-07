@@ -1,4 +1,4 @@
-# laravel-auth
+# laravel-redis
 
 ## composition
 - Nginx
