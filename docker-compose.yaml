@@ -5,6 +5,8 @@ services:
       context: ./docker
       dockerfile: Dockerfile_app
     container_name: laravelProject-app
+    environment:
+      TZ: "Asia/Tokyo"
     volumes:
       - ./app:/var/www/app
     networks:
@@ -39,6 +41,20 @@ services:
       - "127.0.0.1:3306:3306"
     volumes:
       - $HOME/var/lib/mysql:/var/lib/mysql
+    networks:
+      sample-network:
+
+  redis:
+    image: redis:5-alpine
+    container_name: laravelProject-redis
+    expose:
+      - "6379"
+    ports:
+      - "127.0.0.1:6379:6379"
+    environment:
+      TZ: "Asia/Tokyo"
+    volumes:
+      - ./redis:/data
     networks:
       sample-network:
 
