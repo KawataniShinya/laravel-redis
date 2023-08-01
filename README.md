@@ -57,7 +57,7 @@ Password : password123
 
 6. セッションデータ確認
 ```
-docker compose exec laravel-redis sh
+docker compose exec redis /bin/sh
 # redis-cli
 127.0.0.1:6379> keys *
 ```
